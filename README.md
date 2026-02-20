@@ -1,101 +1,101 @@
-# React Legal Firm Application (Kazakhstan)
+# React-приложение для Юридической фирмы (Казахстан)
 
-A modern, multi-page React application built for a premium legal firm operating in the Republic of Kazakhstan. The application is designed with a strict, minimalist light theme, emphasizing professionalism, trust, and deep expertise in local jurisprudence.
+Современное многостраничное React-приложение, разработанное для премиальной юридической фирмы, ведущей свою деятельность в Республике Казахстан. Приложение выполнено в строгом минималистичном светлом дизайне («светлая тема»), подчеркивающем профессионализм, доверие и глубокую экспертизу в местном законодательстве.
 
-## Technology Stack
+## Технологический стек
 
-*   **Core:** React 18, TypeScript
-*   **Build Tool:** Vite
-*   **Routing:** React Router DOM v6
-*   **Styling:** Custom CSS (CSS Variables) with Light/Dark mode support
-*   **Animations:** Framer Motion
-*   **Internationalization (i18n):** i18next, react-i18next
-*   **Icons:** Lucide React (SVG-based, no emojis)
+*   **Ядро:** React 18, TypeScript
+*   **Сборщик:** Vite
+*   **Маршрутизация:** React Router DOM v6
+*   **Стилизация:** Чистый CSS (с использованием CSS-переменных) с поддержкой Светлой/Темной темы
+*   **Анимации:** Framer Motion
+*   **Мультиязычность (i18n):** i18next, react-i18next
+*   **Иконки:** Lucide React (строгие векторные SVG-иконки, без эмодзи)
 
-## Key Features
+## Ключевые возможности
 
-1.  **Multi-page Architecture:**
-    *   **Home:** Hero section, statistical achievements, service overview, and client testimonials.
-    *   **About Us:** Company history, detailed profiles of managing partners, and an interactive FAQ section with accordion logic.
-    *   **Practices (Services):** Comprehensive breakdown of legal services (Corporate Law, Tax Disputes, Asset Protection).
-    *   **Cases:** A dedicated portfolio page highlighting successful legal defenses structured as Problem -> Solution -> Result.
-    *   **Blog:** A knowledge base for publishing articles regarding changes in the tax code, labor law, etc.
-    *   **Contact:** Detailed contact form, mapping details (Almaty), and precise local contact numbers.
+1.  **Многостраничная архитектура (SPA):**
+    *   **Главная:** Приветственный блок (Hero), статистика, обзор ключевых услуг и отзывы клиентов.
+    *   **О компании (About):** История фирмы, подробные профили управляющих партнеров и интерактивный блок "Частые вопросы" (FAQ/Аккордеон).
+    *   **Практики (Services):** Детальное описание юридических услуг (Корпоративное право, Налоговые споры, Защита активов).
+    *   **Кейсы (Cases):** Отдельная страница-портфолио, демонстрирующая успешные судебные дела по структуре "Проблема -> Решение -> Результат".
+    *   **Блог (Blog):** База знаний для публикации статей об изменениях в Налоговом кодексе, трудовом праве и т.д.
+    *   **Контакты (Contact):** Форма обратной связи, адрес (Алматы) и прямые местные телефоны.
 
-2.  **Kazakhstan Localization:**
-    *   Tailored specifically for the KZ market.
-    *   Addresses and phone numbers follow local formats (+7 727, +7 701, Almaty, Esentai Tower).
-    *   Legal terminology uses local abbreviations (SMES, DGD, TOO, AO).
-    *   Currency logic utilizes the Kazakhstani Tenge (KZT).
+2.  **Локализация под Казахстан:**
+    *   Контент полностью адаптирован под рынок РК.
+    *   Адреса и форматы телефонов соответствуют местным стандартам (+7 727, +7 701, г. Алматы, БЦ Esentai Tower).
+    *   Используется актуальная юридическая терминология и аббревиатуры (СМЭС, ДГД, ТОО, АО).
+    *   Все расчеты и статистика указаны в тенге (₸).
 
-3.  **Advanced UI/UX:**
-    *   **Theme Context:** Global state management for switching between Light and Dark modes. Dark mode features a sophisticated graphite background with gold accents.
-    *   **Framer Motion Integration:** Smooth page transitions and scroll-triggered animations for service cards and hero elements.
-    *   **WhatsApp Integration:** A fixed, floating widget allowing instant communication via WhatsApp with pre-filled messages.
-    *   **Legal Fee Calculator:** An interactive tool to estimate legal fees and state duties based on the type of service and the scale of the client's business.
+3.  **Продвинутый UI/UX:**
+    *   **Смена тем (Theme Context):** Глобальное управление состоянием для переключения между Светлым и Темным режимами. Темный режим имеет глубокий графитовый фон с золотыми акцентами.
+    *   **Интеграция Framer Motion:** Плавные переходы между страницами и анимации появления карточек услуг при прокрутке.
+    *   **Интеграция с WhatsApp:** Плавающий виджет, позволяющий клиентам мгновенно связаться с юристом через WhatsApp с заранее подготовленным текстом сообщения.
+    *   **Калькулятор стоимости услуг:** Интерактивный инструмент для предварительного расчета гонорара юриста и государственной пошлины в зависимости от типа услуги и масштаба бизнеса клиента.
 
-4.  **Internationalization Ready:**
-    *   Configured with `react-i18next`.
-    *   Includes a functional language switcher (RU / KZ).
-    *   The navigation and hero sections demonstrate live, zero-refresh translation. The architecture is fully prepared for a complete site translation.
+4.  **Мультиязычность (Готовность к i18n):**
+    *   Настроена библиотека `react-i18next`.
+    *   Реализован переключатель языков (RU / KZ).
+    *   В качестве демонстрации навигация и главный экран поддерживают моментальный перевод без перезагрузки страницы. Архитектура готова к полному переводу всего сайта.
 
-## Getting Started
+## Запуск проекта
 
-### Prerequisites
+### Требования
 
-*   Node.js (v18 or higher recommended)
-*   npm or yarn
+*   Node.js (рекомендуется версия v18 или выше)
+*   npm или yarn
 
-### Installation
+### Установка
 
-1.  Clone the repository:
+1.  Клонируйте репозиторий:
     ```bash
     git clone https://github.com/Despention/Legal.git
     cd Legal
     ```
 
-2.  Install dependencies:
+2.  Установите зависимости:
     ```bash
     npm install
     ```
 
-3.  Start the development server:
+3.  Запустите локальный сервер для разработки:
     ```bash
     npm run dev
     ```
 
-4.  Open `http://localhost:5173` in your browser.
+4.  Откройте `http://localhost:5173` в вашем браузере.
 
-### Building for Production
+### Сборка для Production
 
-To create a production-ready build:
+Для создания оптимизированной сборки выполните:
 
 ```bash
 npm run build
 ```
 
-This will generate an optimized bundle in the `dist` directory, ready to be deployed to any static hosting service (Vercel, Netlify, Nginx, etc.).
+Эта команда сгенерирует готовую к публикации версию файлов в директории `dist`, которую можно разместить на любом статичном хостинге (Vercel, Netlify, Nginx и т.д.).
 
-## Project Structure
+## Структура проекта
 
 ```text
 src/
-├── components/       # Reusable UI components (Layout, ThemeToggle, WhatsAppWidget)
-├── context/          # React Context providers (ThemeContext)
-├── i18n/             # Localization configuration and JSON dictionaries
-├── pages/            # Top-level route components (Home, About, Cases, etc.)
-├── App.tsx           # Main application shell and routing configuration
-├── index.css         # Global styles, variables, and typography rules
-└── main.tsx          # Application entry point
+├── components/       # Переиспользуемые UI компоненты (Layout, ThemeToggle, WhatsAppWidget)
+├── context/          # React Context провайдеры (ThemeContext)
+├── i18n/             # Настройки локализации и JSON-словари
+├── pages/            # Компоненты страниц-маршрутов (Home, About, Cases и т.д.)
+├── App.tsx           # Главный компонент приложения и конфигурация маршрутизатора
+├── index.css         # Глобальные стили, CSS-переменные и шрифты
+└── main.tsx          # Точка входа в приложение
 ```
 
-## Design Philosophy
+## Философия дизайна
 
-The design strictly avoids the use of typical emojis, opting instead for professional SVG icons from the `lucide-react` library. The primary color palette was chosen to evoke stability and authority:
-*   **Primary:** Graphite / Deep Black (#1A1A1A)
-*   **Accent:** Crimson Red (#8B0000) for the light theme, Elegant Gold (#D4AF37) for the dark theme.
-*   **Background:** Clean White (#FFFFFF) transitioning to Deep Grey (#121212) in dark mode.
+В дизайне строго избегается использование стандартных неформальных эмодзи. Вместо них применяются профессиональные SVG-иконки из библиотеки `lucide-react`. Основная цветовая палитра подобрана для создания ощущения стабильности, премиальности и авторитета:
+*   **Основной:** Графитовый / Глубокий черный (#1A1A1A)
+*   **Акцентный:** Насыщенный бордовый/кармин (#8B0000) для светлой темы, Элегантный золотой (#D4AF37) для темной темы.
+*   **Фон:** Чистый белый (#FFFFFF), плавно переходящий в строгий темно-серый (#121212) в темном режиме.
 
-## License
+## Лицензия
 
-This project is proprietary and confidential.
+Данный проект является собственностью разработчика и носит конфиденциальный характер.
