@@ -1,39 +1,17 @@
 import { motion } from 'framer-motion';
 import { Calendar, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const articles = [
-    {
-        id: 1,
-        title: 'Изменения в Налоговом кодексе РК в 2026 году: Что нужно знать бизнесу?',
-        date: '15 Февраля 2026',
-        excerpt: 'Разбираем ключевые поправки, касающиеся НДС, всеобщего декларирования и новых полномочий налоговых органов при проверках ТОО.',
-        category: 'Налоги'
-    },
-    {
-        id: 2,
-        title: 'Как правильно оформить увольнение сотрудника, чтобы избежать суда',
-        date: '02 Февраля 2026',
-        excerpt: 'Трудовые споры — частая проблема работодателей. Пошаговая инструкция по процедуре расторжения трудового договора по инициативе работодателя.',
-        category: 'Трудовое право'
-    },
-    {
-        id: 3,
-        title: 'Ответственность директора ТОО: За что могут привлечь к субсидиарной ответственности',
-        date: '20 Января 2026',
-        excerpt: 'Мифы и реальность об ответственности учредителей и первых руководителей при банкротстве компании. Анализ судебной практики СМЭС.',
-        category: 'Корпоративное право'
-    },
-    {
-        id: 4,
-        title: 'ВЭД контракты: типичные ошибки при импорте товаров из Китая',
-        date: '10 Января 2026',
-        excerpt: 'На что обратить внимание: арбитражная оговорка, применимое право и базисы поставки Инкотермс 2020.',
-        category: 'Договорное право'
-    }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Blog() {
+    const { t } = useTranslation();
+    const articles = t('blog.articles', { returnObjects: true }) as {
+        title: string;
+        date: string;
+        excerpt: string;
+        category: string;
+    }[];
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -44,8 +22,8 @@ export default function Blog() {
         >
             <section className="section bg-light page-header">
                 <div className="container">
-                    <h1 className="page-title">Юридический блог</h1>
-                    <p className="page-subtitle">Актуальные статьи, обзоры законодательства и советы от экспертов "Право & Защита".</p>
+                    <h1 className="page-title">{t('blog.title')}</h1>
+                    <p className="page-subtitle">{t('blog.subtitle')}</p>
                 </div>
             </section>
 
@@ -54,7 +32,7 @@ export default function Blog() {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
                         {articles.map((article, index) => (
                             <motion.div
-                                key={article.id}
+                                key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -91,7 +69,7 @@ export default function Blog() {
 
                                 <div style={{ padding: '1.5rem 2rem', borderTop: '1px solid var(--color-border)', background: 'var(--color-bg-alt)' }}>
                                     <Link to="#" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                        Читать далее <ChevronRight size={18} />
+                                        {t('blog.read_more')} <ChevronRight size={18} />
                                     </Link>
                                 </div>
                             </motion.div>

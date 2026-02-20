@@ -55,11 +55,11 @@ export default function Layout() {
                                 <Scale className="logo-icon" size={24} />
                                 <span>Право & Защита</span>
                             </Link>
-                            <p>Надежный правовой партнер для вашего бизнеса в Республике Казахстан.</p>
+                            <p>{t('footer.brand_desc')}</p>
                         </div>
 
                         <div className="footer-links">
-                            <h4>Навигация</h4>
+                            <h4>{t('footer.nav_title')}</h4>
                             <ul>
                                 <li><Link to="/">{t('nav.home')}</Link></li>
                                 <li><Link to="/about">{t('nav.about')}</Link></li>
@@ -71,15 +71,15 @@ export default function Layout() {
                         </div>
 
                         <div className="footer-contact">
-                            <h4>Контакты</h4>
+                            <h4>{t('footer.contact_title')}</h4>
                             <p><Phone size={18} /> +7 (727) 300-00-00</p>
                             <p><Phone size={18} /> +7 (701) 000-00-00</p>
-                            <p><MapPin size={18} /> г. Алматы, пр-т Аль-Фараби, 77/7</p>
+                            <p><MapPin size={18} /> {t('footer.address')}</p>
                             <p><Mail size={18} /> info@lawfirm-kz.kz</p>
                         </div>
                     </div>
                     <div className="footer-bottom">
-                        <p>&copy; {new Date().getFullYear()} Юридическая фирма "Право & Защита". Казахстан, Алматы.</p>
+                        <p>&copy; {new Date().getFullYear()} {t('footer.copyright')}</p>
                     </div>
                 </div>
             </footer>

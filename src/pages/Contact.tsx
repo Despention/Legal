@@ -1,7 +1,9 @@
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
-import { FormEvent, useState } from 'react';
+import { useState, type FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+    const { t } = useTranslation();
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e: FormEvent) => {
@@ -14,32 +16,32 @@ export default function Contact() {
         <div className="page-contact">
             <section className="section bg-light page-header">
                 <div className="container">
-                    <h1 className="page-title">Свяжитесь с нами</h1>
-                    <p className="page-subtitle">Доверьте свои правовые вопросы профессионалам.</p>
+                    <h1 className="page-title">{t('contact.title')}</h1>
+                    <p className="page-subtitle">{t('contact.subtitle')}</p>
                 </div>
             </section>
 
             <section className="section">
                 <div className="container contact-container">
                     <div className="contact-info">
-                        <h2>Наши контакты</h2>
-                        <p className="contact-desc">Мы всегда готовы обсудить вашу ситуацию и предложить оптимальное правовое решение. Звоните, пишите или приезжайте в наш офис в Алматы.</p>
+                        <h2>{t('contact.info_title')}</h2>
+                        <p className="contact-desc">{t('contact.info_desc')}</p>
 
                         <div className="contact-details">
                             <div className="contact-item">
                                 <MapPin className="contact-icon" size={24} />
                                 <div>
-                                    <h4>Адрес</h4>
-                                    <p>г. Алматы, Бостандыкский район, пр-т Аль-Фараби, 77/7, бизнес-центр "Esentai Tower", офис 1405</p>
+                                    <h4>{t('contact.address_label')}</h4>
+                                    <p style={{ whiteSpace: 'pre-line' }}>{t('contact.address_val')}</p>
                                 </div>
                             </div>
 
                             <div className="contact-item">
                                 <Phone className="contact-icon" size={24} />
                                 <div>
-                                    <h4>Телефоны</h4>
-                                    <p>+7 (727) 300-00-00 (Многоканальный)</p>
-                                    <p>+7 (701) 000-00-00 (Мобильный, WhatsApp)</p>
+                                    <h4>{t('contact.phone_label')}</h4>
+                                    <p>{t('contact.phone_val1')}</p>
+                                    <p>{t('contact.phone_val2')}</p>
                                 </div>
                             </div>
 
@@ -54,49 +56,49 @@ export default function Contact() {
                             <div className="contact-item">
                                 <Clock className="contact-icon" size={24} />
                                 <div>
-                                    <h4>Часы работы</h4>
-                                    <p>Пн-Пт: 09:00 – 18:00</p>
-                                    <p>Сб-Вс: Выходной</p>
+                                    <h4>{t('contact.time_label')}</h4>
+                                    <p style={{ whiteSpace: 'pre-line' }}>{t('contact.time_val')}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="contact-form-box">
-                        <h2>Оставить заявку</h2>
+                        <h2>{t('contact.form_title')}</h2>
                         {submitted ? (
                             <div className="success-message">
-                                <p>Спасибо! Ваша заявка успешно отправлена. Наш юрист свяжется с вами в течение рабочего дня.</p>
+                                <h3>{t('contact.success_title')}</h3>
+                                <p>{t('contact.success_desc')}</p>
                                 <button className="btn btn-outline" onClick={() => setSubmitted(false)} style={{ marginTop: '1rem' }}>
-                                    Отправить новую заявку
+                                    {t('contact.form_submit')}
                                 </button>
                             </div>
                         ) : (
                             <form className="contact-form" onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="name">Ваше имя *</label>
-                                    <input type="text" id="name" required placeholder="Например, Арман" />
+                                    <label htmlFor="name">{t('contact.form_name')} *</label>
+                                    <input type="text" id="name" required placeholder="" />
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="phone">Телефон *</label>
+                                    <label htmlFor="phone">{t('contact.form_phone')} *</label>
                                     <input type="tel" id="phone" required placeholder="+7 (7XX) XXX-XX-XX" />
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="message">Краткое описание ситуации</label>
-                                    <textarea id="message" rows={4} placeholder="Опишите ваш юридический вопрос..."></textarea>
+                                    <label htmlFor="message">{t('contact.form_desc')}</label>
+                                    <textarea id="message" rows={4} placeholder="..."></textarea>
                                 </div>
 
                                 <div className="form-policy">
                                     <label>
                                         <input type="checkbox" required />
-                                        Я согласен на обработку персональных данных
+                                        {t('contact.form_agree')}
                                     </label>
                                 </div>
 
                                 <button type="submit" className="btn btn-primary btn-large">
-                                    Отправить запрос
+                                    {t('contact.form_submit')}
                                 </button>
                             </form>
                         )}
